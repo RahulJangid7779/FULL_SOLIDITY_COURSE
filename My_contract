@@ -1,1 +1,31 @@
 
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.7.0 <0.9.0;
+// contract hello{
+//     function getmsg() public pure returns (string memory){
+//         return  "hello world";
+//     }
+// }
+// DATA TYPE IN SOLIDITY
+// they bydefault use 32 byte memory and you will change in futher
+// this is way you can set the value by using uint8 here 8 is the byte and you can go to 256
+//int(+value and -value you store in uint) and uint(only +ve value its store not negative)
+// two type of data type fixed size and varible size datatype
+// boolean  used only 1 byte of memory
+//  addres valariable used 20 byte of memo
+// bytes store only character if declare a fixed size of character we initilize with bytes3 
+// the bytes is more efficent than the string becz its used less gass fees. always used bytes over string
+// contract hello{
+// int val=9;
+// uint val2=1;
+// uint8 val3=122;
+// bool val4 =true;
+// address val5="";
+// bytes3 val6="abc";
+// }
+// public private and internal and external
+// public 
+// public - any contract and account can call
+// private - only inside the contract that defines the function
+// internal- only inside contract that inherits an internal function
+// external - only other contracts and accounts can call
