@@ -1,31 +1,66 @@
-
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.7.0 <0.9.0;
-// contract hello{
-//     function getmsg() public pure returns (string memory){
-//         return  "hello world";
+pragma solidity ^0.8.12;
+// this is a way we acces variable
+// contract  Identity{
+//     string name;
+//     uint age;
+//     constructor(){
+//         name="rahul";
+//         age=12;
+//     }
+//     function getname() public view returns(string memory){
+//         return name;
+//     }
+//       function getage() public view returns(uint){
+//         return age;
+//     }
+//     function setage() public {
+//         age=age+1;
 //     }
 // }
-// DATA TYPE IN SOLIDITY
-// they bydefault use 32 byte memory and you will change in futher
-// this is way you can set the value by using uint8 here 8 is the byte and you can go to 256
-//int(+value and -value you store in uint) and uint(only +ve value its store not negative)
-// two type of data type fixed size and varible size datatype
-// boolean  used only 1 byte of memory
-//  addres valariable used 20 byte of memo
-// bytes store only character if declare a fixed size of character we initilize with bytes3 
-// the bytes is more efficent than the string becz its used less gass fees. always used bytes over string
-// contract hello{
-// int val=9;
-// uint val2=1;
-// uint8 val3=122;
-// bool val4 =true;
-// address val5="";
-// bytes3 val6="abc";
+// STATE VARIABLE
+// state variable are those variable which are create on the contract directy not inside the function when  we create it they are store in the blockchain directly due to this we pay high gas frees 
+// contract state{
+//     uint public age;
+
 // }
-// public private and internal and external
-// public 
-// public - any contract and account can call
-// private - only inside the contract that defines the function
-// internal- only inside contract that inherits an internal function
-// external - only other contracts and accounts can call
+// we cannot assign the value of the variable in the function diecty 1 we have to compile then deploy then the button is create 
+// state variable are not dynamically allocated
+// we can assign value to the state variable in 3 ways 
+// 1. directly assign  uint public age =10;
+// age=10 this is give error we cannot declare like this 
+// 2.by constructor constructor{
+//     age=10;
+// }
+// 3.by setfunction by create function ex function setvariable() public {
+//     age=10;
+// }
+// LOCAL VARIABLE
+// In Solidity, local variables are variables that are declared inside functions and are only accessible within the function where they are defined
+//  they are store in stack not store in blockchain
+// contract local
+// {
+// function localvar() pure public returns(uint){
+// string memory name ="ravi";
+// uint age=10;
+// return age;
+// }
+// }
+// FUNCTION GETTER AND FUNCTION
+// contract FUN {
+//     uint public age=10;
+//     function getter() public view returns(uint) {
+// return age;
+//     }
+    // increament the value
+    // function setter() public  {
+    //     age=age+1;
+    // }
+    // passing argument
+    // function setter(uint newage) public  {
+    //     age=newage;
+    // // }
+    // we have to pay the gas in the settter function becz we make changes in the blockchain so we have to pay some gas.
+    // while in getter we dont bring any change so there is no gas fees in this
+    // imp****************** when we declare the public in the state then we dont have to create the the getter function of that variable becz we initilize the public which automatically create the getter function
+}
