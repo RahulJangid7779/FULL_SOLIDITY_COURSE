@@ -64,3 +64,90 @@ pragma solidity ^0.8.12;
     // while in getter we dont bring any change so there is no gas fees in this
     // imp****************** when we declare the public in the state then we dont have to create the the getter function of that variable becz we initilize the public which automatically create the getter function
 }
+// constructor
+// contract local {
+//     uint public count;
+//     constructor(uint counts){
+//         count=counts;
+//     }
+// }
+//execute only once
+// you can create only one constructor and that is optional
+// a default constructor is created by the compiler if there is no explicity define 
+// Integers
+// int=-+ uint=+ 
+// size 8 to 256 int
+// size 8 to 256 uint
+// when we used int in our solidity we indirectly assign the 256
+// same as uint we indirectly assign 256
+// multiple of 8
+// by default int is initilize to 0
+// overflow get detected at compile time
+// range int8 -128 to +127 and int16 -32768 to +32767
+// uint 0to255 and uint16 0 to 65535
+//  formula integers -2^(n-1) to 2^(n-1)-1  where n is number of bit
+//  formula for unsign integern 0 to 2^(n)-1  where n is number of bit
+// contract values1{
+//     int8 count =127;
+//     uint8 count1=25;
+
+// }
+// this is big problem of overflow
+// some basic opoertor are used 
+// <=,<,==,!=,>=,>(evaluate to bool)
+// bit operator &,|,^(bitwise exclusive or),bitwise 
+// overflow and underflow
+// read on article
+// contract local1{
+// uint public  money=255;
+// function setter() public {
+//     money=money+1;
+// }
+// }
+// in the version 0.5.0 we got value 0 which is very dangerous in the programming. for more detail kindly read the article
+// ARRAYS
+// there are two type array in solidity 1 fixed size array and the other is 2 dynamic size array
+// fixed size
+// compile time par array ki size define kar ni padhi ti ha that is why this is fixed size array
+//  contract arraylen{
+// uint[4] public arr=[10,20,30,40];
+// function setter(uint index,uint value) public{
+//     arr[index]=value;
+// }
+// this is a way we can calculate the length of array
+// function length() public view returns(uint len){
+//     return arr.length;
+// }
+// }
+// we can access the  value after deploy and we pass the index of that
+// Dynamic size array
+// contract dynamicarr{
+// uint[] public arr;
+// function pushelement(uint item) public {
+// arr.push(item);
+// }
+// function lenarr() public view returns(uint){
+// return arr.length;
+// }
+// function popfunc() public {
+//     arr.pop();
+// }
+// }
+// BYTE ARRAYS
+// 1 byte=8bits
+// 1 hex digit=4 bits
+// everything that will be stored in the byte array will be in the form of hexadecimal digits
+// contract array{
+//     bytes3 public b3; 
+//     bytes2 public b2;
+//     function setter() public  {
+//         b2="ab";
+//         b3="abc";
+//     }
+// }
+// bytes3 this is a way we create a array in the 3 means 3*8=24bits
+// asci value are assign to the abc=616263
+//  if we assign the value more than b3 like abcd this will give me error 
+// if we assignt the b2 like this"a" value size is less than so 0 is assign
+// byte array is in mutable
+
