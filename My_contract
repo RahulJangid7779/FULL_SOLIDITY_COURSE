@@ -150,4 +150,87 @@ pragma solidity ^0.8.12;
 //  if we assign the value more than b3 like abcd this will give me error 
 // if we assignt the b2 like this"a" value size is less than so 0 is assign
 // byte array is in mutable
+// LOOP IN SOLIDITY
+// 1 for
+// 2 while 
+// 3 do while
+// contract array
+// {
+//     uint[3] public arr;
+//     uint public count;
+//     function loop() public {
+//  do{
+// arr[count]=count;
+// count++;
+//  }
+//  while(count<arr.length);
 
+ 
+//     }
+    
+    
+// }
+// IF ELSE
+// contract if_else{
+//     function check(int a) public pure returns(string memory){
+        
+//         string memory value;
+//         if (a>0){
+//             value="greater than zero";
+//         }
+//         else{
+//             value="less than zero";
+//         }
+//         return value;
+    
+//     }
+// }
+// BOOLEANS 
+// contract booleans_datatype{
+//     bool public value=true;
+//     function check(uint a) public returns(bool){
+//         if(a>100){
+//             value=true;
+//             return value;
+//         }
+//         else{
+//             value=false;
+//             return value;
+//         }
+
+//     }
+
+// }
+// by default the value is false
+// STRUCTURE IN SOLIDITY
+// DENOTED BY STRUCT
+// till now we used the datatype which are given by solidity
+// but with the help of struct we can define our own data type 
+// this is know as complex data type
+// external struct school{
+//     uint roll;
+//     string name;
+// }
+// this is an example of struct data type  in which we create a data type know as 
+// school and inside this we create a type data type uint and string 
+// we can create inside and outside the contract 
+// we we create outside multiple contract can acces 
+// we create inside only the specififc contract can access
+// struct student{
+//     uint roll;
+//     string name;
+// }
+// contract demo{
+    // student public s1;
+//     constructor(uint roll__,string memory name__){
+// s1.roll=roll__;
+// s1.name=name__;}
+
+// function change1(uint roll__,string memory name__) public{
+// student memory new_student=student({
+    // roll:roll__,
+    // name:name__
+// });
+// s1=new_student;
+// }
+    // }
