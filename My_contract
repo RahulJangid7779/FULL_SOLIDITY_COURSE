@@ -234,3 +234,57 @@ pragma solidity ^0.8.12;
 // s1=new_student;
 // }
     // }
+// ENUM
+// we create enum to assign a value to a constant,integralvalue;
+// this is aslo used to give the code readibility to understand for other
+// contract state{
+//     enum user{allow,notallow,wait}
+//     user public l1=user.allow;
+//     uint public lottery=1000;
+//     function owner() public{
+//         if(l1==user.allow){
+//             lottery=0;
+//         }
+//     }
+//     function changeowner() public{
+//         l1=user.notallow;
+//     }
+
+// }
+// set are limited we used enum
+// MAPPING---------
+// concept of key value
+// this is data structure 
+// contract demo{
+//     mapping(uint=>string) public roll_no;
+//     function setter(uint keys,string memory value) public{
+//         roll_no[keys]=value;
+//     }
+// }  
+// in this we only set the value only for one
+// diffrence between array and mapping 
+// mapping there is  no sequentiol order.
+// but in array there is a sequential 
+// we used mapping were we store the value on index which we want
+// MAPPING_PART-2------------
+// contract demo{
+//     struct student{
+//         string name;
+//         uint class;
+//     }
+//     mapping(uint=>student) public data;
+//     function setter(uint _roll,string memory name,uint class) public {
+//         data[_roll]=student(name,class);
+        // }
+// }key cannot be data type mapping,dynamic_array,enum,struct\
+// value can be any type
+// mapping are always store in storage irrespectively of weather they are declaredn in contract or not
+// this mean they always store in the blockchain
+// GLOBALVARIABLE
+// the global variable are the some built in function that make our work easy.
+// contract demo{
+// function getter() public view returns(uint block_no, uint timestamp,address msgsender){
+//     return(block.number,block.timestamp,msg.sender);
+// }
+// }
+// know more about the more buildin data type
