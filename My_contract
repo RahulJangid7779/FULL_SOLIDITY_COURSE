@@ -220,6 +220,29 @@ pragma solidity ^0.8.12;
 //     uint roll;
 //     string name;
 // }
+//CONTRACT BALANCE
+// contract pay{
+//     address payable user1=payable (0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
+//     function payether() public payable {
+
+//     }
+//     function getbalance() public view returns(uint){
+//         return address(this).balance;
+//     }
+//     function sendetheraccount() public {
+//         user1.transfer(10 ether);
+//     }
+//     function getbalance1()  public view  returns(uint){
+        
+//         return user1.balance;
+//     }
+
+// }
+//VISIBILITY
+//  public outside within derived other
+//  private within
+//  internal within derived
+//  external outside derived notwithin other
 // contract demo{
     // student public s1;
 //     constructor(uint roll__,string memory name__){
