@@ -1,1 +1,47 @@
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.5.0 <0.9.0;
 
+contract Lottery {
+    address public manager; // Manager address to control the lottery
+    address payable[] public participants; // List of participants
+
+    constructor() {
+        manager = msg.sender; // Set the manager as the contract deployer
+    }
+
+    // Receive function to accept ether payments
+    receive() external payable {
+        require(msg.value == 1 ether, "You must send exactly 1 ether to participate.");
+        participants.push(payable(msg.sender)); // Add sender to participants list
+    }
+
+    // Function to check the contract balance (only for the manager)
+    function getBalance() public view returns (uint) {
+        require(msg.sender == manager, "Only the manager can check the balance.");
+        return address(this).balance;
+    }
+
+    // Random number generator based on the block difficulty, timestamp, and participants' count
+    function random() public view returns (uint) {
+        return uint(keccak256(abi.encodePacked(block.prevrandao, block.timestamp, participants.length)));
+    }
+
+    // Function to select a winner (only the manager can call this)
+    function selectWinner() public {
+        require(msg.sender == manager, "Only the manager can select the winner.");
+        require(participants.length >= 3, "There must be at least 3 participants.");
+
+        uint r = random(); // Generate a random number
+        uint index = r % participants.length; // Get a random index for the winner
+
+        address payable winner = participants[index]; // Select the winner
+        winner.transfer(address(this).balance); // Transfer the contract balance to the winner
+
+    }
+
+    function resetParticipants() public {
+      require(msg.sender == manager, "Only the manager can select the winner.");
+       delete participants;  // Reset participant array for next round
+
+    }
+}
